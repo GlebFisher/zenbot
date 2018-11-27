@@ -1,10 +1,11 @@
 <text>Привет!</text>
 <context>
+    <text>Привет!</text>
     <sample>
         <item value="Кто такая Алиса"/>
         <item value="Что такое бот"/>
     </sample>
-
+<text>Привет!</text>
     <input pattern="* (привет*|здравствуй*) *">
         <output if="full($UserName)">
             <item value="Привет, $UserName! Рада снова видеть тебя!"/>
