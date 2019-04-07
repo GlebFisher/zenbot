@@ -57,19 +57,21 @@
 </context>
 
 
+<context>
+    <sample>
+        <item value="Расскажи анекдот"/>        
+    </sample>
+    <input pattern="* (*расскажи*|*раскажи*|*анекдот*|*расскажи* * *анекдот*) *">
+        <output>
+            <item value="Каждый раз, когда я слышу запись своего голоса, мне хочется попросить прощения у всех, с кем я когда-либо разговаривал."/>
+            <item value="- Можно ли про творчество современных эстрадных исполнителей сказать,
+что это вокал?
+- Можно, но зачастую только написав это слово раздельно."/>
+            <item value="Если ты кого-то действительно любишь… дай ему поспать!"/>
+        </output>
+    </input>
+       
+   </context>
 
-<context id="anekdot_texts" if="full($UserName)">
-    <input pattern="* (расскажи*|раскажи|анекдот|расскажи анекдот*) *">
-            <get url="https://www.anekdot.ru/rss/random.html" var="anekdot_texts">
-                <param name="format" value="JSON"/>               
-            </get>
 
-            <var name="Result" value="javascript: document.write(anekdot_text);" scope="context"/>           
-           
-            <output value="$Result" if="full($Result)"/>
 
-            <input pattern="* (еще|другой вариант) *"/>
-
-            <sample value="Другой вариант"/>
-        </input>
-</context>
