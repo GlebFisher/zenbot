@@ -55,3 +55,21 @@
     </input>
 
 </context>
+
+
+
+<context id="anekdot_texts" if="full($UserName)">
+    <input pattern="* (расскажи*|раскажи|анекдот|расскажи анекдот*) *">
+            <get url="https://www.anekdot.ru/rss/random.html" var="anekdot_texts">
+                <param name="format" value="JSON"/>               
+            </get>
+
+            <var name="Result" value="javascript: document.write(anekdot_text);" scope="context"/>           
+           
+            <output value="$Result" if="full($Result)"/>
+
+            <input pattern="* (еще|другой вариант) *"/>
+
+            <sample value="Другой вариант"/>
+        </input>
+</context>
