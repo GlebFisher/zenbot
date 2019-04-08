@@ -1,11 +1,11 @@
 <context>  
 <input pattern="* (привет*|здравствуй*) *">
             
-            <get url="http://rzhunemogu.ru/Rand.aspx">                
+            <get url="http://rzhunemogu.ru/Rand.aspx" var="Result">                
                 <param name="CType" value="1"/>                
             </get>
             
-            <var name="Result" value="javascript: true"/>
+            <var name="Result" value="$Result['root']['content']"/ >
 
             <output if="empty($Result)">
                 <item value='Я поискала в википедии, но ничего не нашла по запросу "$Text"'/>
