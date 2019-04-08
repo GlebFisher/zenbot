@@ -65,8 +65,5 @@
         <input pattern="* как дела *">             
         <output value="У меня всё хорошо!"/>
         </input>     
-
-		<input pattern="*">             
-        <output value="FUCK YOU!!!"/>
-        </input>   		
+	  		
 </context>
