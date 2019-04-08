@@ -1,4 +1,6 @@
-<context>       
+<context> 
+	<output value="Чё надо?!"/>
+	
          <input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">            
             <get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                 <param name="CType" value="1"/>                
