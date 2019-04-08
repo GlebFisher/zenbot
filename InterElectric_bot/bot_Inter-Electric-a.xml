@@ -12,7 +12,7 @@
              <var name="Items" value="javascript: $Wiki['SearchSuggestion']['Section']['Item']" if="full($Wiki)" scope="context" />
             <var name="Result" value="javascript: $Items[Math.floor(Math.random() * $Items.length)]['Description']['content']" if="full($Items)" />
            
-            <output value="$Result" />
+            <output value="$Result" if="full($Result)"/>
           
      
     </input>
