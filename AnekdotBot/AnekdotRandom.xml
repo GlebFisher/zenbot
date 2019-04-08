@@ -2,7 +2,7 @@
            	
 		
  <input pattern="* как дела *">             
-        <output value="У меня всё хорошо!"/>
+        <output value="У меня всё хорошо!" />
  </input>   
 		
 	
