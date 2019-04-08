@@ -1,1 +1,14 @@
+<context>  
+<input pattern="* (привет*|здравствуй*) *">
+            
+            <get url="http://rzhunemogu.ru/Rand.aspx" var="w">                
+                <param name="CType" value="1"/>                
+            </get>
+            
+            <var name="Result" value="javascript: $w.text" />                    
+           
+            <output value="$Result" />          
+     
+    </input>
+   </context>
 
