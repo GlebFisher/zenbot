@@ -1,4 +1,4 @@
-        <context id="wiki" if="full($UserName)">
+        <context id="wiki">
             <get url="http://ru.wikipedia.org/w/api.php" var="Wiki">
                 <param name="format" value="xml"/>
                 <param name="action" value="opensearch"/>
