@@ -12,8 +12,8 @@
 							<item value="И я тебя приветствую, мой друг! Как тебя зовут?" />
 						</output>	
 			
-						<input pattern="$Name_User_Input">				
-							<var name="UserName" value="cap($Name_User_Input)" scope="user" />					
+						<input pattern="$text">				
+							<var name="UserName" value="cap($text)" scope="user" />					
 								<output>
 									<item value="Будем знакомы, $UserName! Как дела?" />						
 								</output>
