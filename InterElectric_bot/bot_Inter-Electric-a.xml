@@ -2,7 +2,7 @@
 <input pattern="$Text">
        
 
-        <context>
+     
             <get url="http://ru.wikipedia.org/w/api.php" var="Wiki">
                 <param name="format" value="xml"/>
                 <param name="action" value="opensearch"/>
@@ -22,7 +22,7 @@
             <input pattern="* (еще|другой вариант) *"/>
 
             <sample value="Другой вариант"/>
-        </context>
+     
 
 
     </input>
