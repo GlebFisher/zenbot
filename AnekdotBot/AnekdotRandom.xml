@@ -1,4 +1,4 @@
-<context>
+
 	
 	
 	<input pattern="* (привет*|здравствуй*) *">
@@ -54,4 +54,4 @@
 	</context>
 					
 
-</context>
+
