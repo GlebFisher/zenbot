@@ -1,3 +1,3 @@
 <input pattern="* как дела *">             
-    <output value="У меня всё хорошо!"/>
-</input>
+    <output value="У меня всё хорошо!" >
+</ input>
