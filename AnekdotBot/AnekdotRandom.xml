@@ -14,7 +14,7 @@
 			
 						<input pattern="$Name_User_Input">				
 							<var name="UserName" value="cap($Name_User_Input)" scope="user" />					
-								<output if="full($UserName)">
+								<output>
 									<item value="Будем знакомы, $UserName! Как дела?" />						
 								</output>
 						</input>
@@ -31,7 +31,7 @@
 					
 			</input>
 			
-<input pattern="* пока *">
+		<input pattern="* пока *">
 			<var name="end_session" value="javascript: true"/>        
 			<output value="Пока-пока!"/>
 		</input> 			
@@ -44,7 +44,7 @@
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                				 <param name="CType" value="1"/>                
             			</get>            
-           			 <var name="Result" value="javascript: $Anekdot['root']" />                                                  
+           			 <var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
             				<output value="$Result" if="full($Result)" />      
 			    </input>
          
@@ -52,7 +52,7 @@
            		 <get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
               			  <param name="CType" value="4"/>                
             		</get>            
-            			<var name="Result" value="javascript: $Anekdot['root']" />                                                  
+            			<var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
            				 <output value="$Result" if="full($Result)" /> 
 		</input>	  
 	
