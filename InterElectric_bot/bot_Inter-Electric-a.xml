@@ -1,7 +1,4 @@
-<context>  
-<input pattern="* (привет*|здравствуй*) *">
-            
-           <output value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
-               
-    </input>
-   </context>
+<category>
+<pattern>СКОЛЬКО ТЕБЕ ЛЕТ</pattern>
+<template> Больше, чем ты думаешь! </template>
+</category>
