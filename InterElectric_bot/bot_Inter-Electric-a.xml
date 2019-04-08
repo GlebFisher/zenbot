@@ -5,7 +5,7 @@
                 <param name="CType" value="1"/>                
             </get>
             
-            <var name="Result" />
+            <var name="Result" value="javascript: true"/>
 
             <output if="empty($Result)">
                 <item value='Я поискала в википедии, но ничего не нашла по запросу "$Text"'/>
