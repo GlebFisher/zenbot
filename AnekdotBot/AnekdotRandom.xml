@@ -1,6 +1,9 @@
-
-	<context id="start" if="full($UserName)">		
+<context>
+	
+	<context id="start" if="full($UserName)">
+		
 	<output value="Привет!" />
+		
 		<input pattern="* (привет*|*здра*|здорова*) *">
 			<output if="full($UserName)">
 				<item value="И я тебя приветствую, $UserName! Как дела?">
@@ -14,6 +17,7 @@
 			</output>	
 				
 		</input>
+				
 	</context>
 				
 			
@@ -39,7 +43,7 @@
 		</context>
 			
 			
-<context> 	
+	<context> 	
          <input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">            
             <get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                 <param name="CType" value="1"/>                
@@ -65,4 +69,6 @@
         <output value="У меня всё хорошо!"/>
         </input>     
 	  		
+	</context>
+					
 </context>
