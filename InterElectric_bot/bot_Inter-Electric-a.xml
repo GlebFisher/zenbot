@@ -1,12 +1,12 @@
 <context>  
 <input pattern="* (привет*|здравствуй*) *">
             
-            <get url="http://rzhunemogu.ru/Rand.aspx?CType=1" var="Anekdot">
+            <get url="http://rzhunemogu.ru/Rand.aspx">
                 <param name="format" value="xml"/>
-                <param name="action" value="get"/>                
+                <param name="CType" value="1"/>                
             </get>
             
-            <var name="Result" value="javascript: $Anekdot['root']['content']" if="full($Anekdot)"/>
+            <var name="Result" />
 
             <output if="empty($Result)">
                 <item value='Я поискала в википедии, но ничего не нашла по запросу "$Text"'/>
