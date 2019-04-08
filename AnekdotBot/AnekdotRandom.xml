@@ -44,9 +44,9 @@
 			<var name="end_session" value="javascript: true"/>        
 			<output value="Пока-пока!"/>
 		</input> 
-		
+		</input>
 		</context>	
-					</input>
+					
 		
 		
 		
@@ -81,3 +81,4 @@
 	</context>
 
 </context>	
+  
