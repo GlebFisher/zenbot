@@ -1,0 +1,30 @@
+<context>  
+         <input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">            
+            <get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
+                <param name="CType" value="1"/>                
+            </get>            
+            <var name="Result" value="javascript: $Anekdot['root']" />                                                  
+            <output value="$Result" if="full($Result)" />         
+         </input>
+            
+         <input pattern="* (расскажи*|*афоризм*|расскажи афоризм*) *">            
+            <get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
+                <param name="CType" value="4"/>                
+            </get>            
+            <var name="Result" value="javascript: $Anekdot['root']" />                                                  
+            <output value="$Result" if="full($Result)" />         
+         </input>   
+            
+        <input pattern="* пока *">
+        <var name="end_session" value="javascript: true"/>        
+        <output value="Пока-пока!"/>
+        </input>   
+            
+        <input pattern="* как дела *">             
+        <output value="У меня всё хорошо!"/>
+        </input> 
+
+		<input pattern="*">             
+        <output value="Пошёл нахуй!!"/>
+        </input>   		
+</context>
