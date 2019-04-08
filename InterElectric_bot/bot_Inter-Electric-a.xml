@@ -6,7 +6,9 @@
             </get>
             
             <var name="Result" value="javascript: $Anekdot['root'].text" />                    
-           
+           <output if="empty($Result)">
+                <item value='Пошёл нахуй!'/>                
+            </output>
             <output value="$Result" if="full($Result)" />          
      
     </input>
