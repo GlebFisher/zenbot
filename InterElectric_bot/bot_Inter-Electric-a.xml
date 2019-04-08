@@ -1,3 +1,4 @@
+<context>
 <input pattern="[* (кто|что) так*] $Text">
         <context id="name" if="empty($UserName)"/>
 
@@ -25,3 +26,4 @@
 
 
     </input>
+</context>
