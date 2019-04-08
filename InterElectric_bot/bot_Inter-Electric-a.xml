@@ -1,16 +1,13 @@
 <context>  
 <input pattern="$Text">
-       
-
-     
-            <get url="http://ru.wikipedia.org/w/api.php" var="Wiki">
+            
+            <get url="http://rzhunemogu.ru/Rand.aspx?CType=1" var="Anekdot">
                 <param name="format" value="xml"/>
                 <param name="action" value="opensearch"/>
                 <param name="search" value="$Text"/>
             </get>
-
-            <var name="Items" value="javascript: $Wiki['SearchSuggestion']['Section']['Item']" if="full($Wiki)" scope="context"/>
-            <var name="Result" value="javascript: $Items[Math.floor(Math.random() * $Items.length)]['Description']['content']" if="full($Items)"/>
+            
+            <var name="Result" value="javascript: $Anekdot['root']['content']" if="full($Anekdot)"/>
 
             <output if="empty($Result)">
                 <item value='Я поискала в википедии, но ничего не нашла по запросу "$Text"'/>
@@ -23,7 +20,5 @@
 
             <sample value="Другой вариант"/>
      
-
-
     </input>
    </context>
