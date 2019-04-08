@@ -1,29 +1,14 @@
-<context>	
-	
-	
-	<context id="aforism">
-       		  <input pattern="* (расскажи*|*афоризм*|расскажи афоризм*) *">            
-           		 <get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
-              			  <param name="CType" value="4"/>                
-            		</get>            
-            			<var name="Result" value="javascript: $Anekdot['root']" />                                                  
-           				 <output value="$Result" if="full($Result)" /> 
-	</context>
-        	 </input>                       
-            
-        <input pattern="* как дела *">             
-        	<output value="У меня всё хорошо!"/>
-        </input>     
-	  		
-			
-			<context id="name" if="full($UserName)">
+<context>		     	                    
+                    	  					
+	<context id="name" if="full($UserName)">
 		
-	<output value="Привет!" />
+		<output value="Привет!" />
 		
-		<input pattern="* (привет*|*здра*|здорова*) *">
-			<output if="full($UserName)">
-				<item value="И я тебя приветствую, $UserName! Как дела?" />
-			</output>
+	<input pattern="* (привет*|*здра*|здорова*) *">
+		
+		<output if="full($UserName)">
+			<item value="И я тебя приветствую, $UserName! Как дела?" />
+		</output>
 				
 			<input pattern="* (*хорошо*|*норм*|*отлич*|*заеб*) *">
 				<output value="Ну и отлично!" />
@@ -31,8 +16,10 @@
 				
 			<input pattern="* (*плохо*|*неоч*|*ужас*|*хуе*) *">
 				<output value="Не расстраивайся, жизнь порой бывает сложная штука, всё образуется! :((" />
-			</input>			
-		<context id="name" if="empty($UserName)">
+			</input>
+	</context>	
+		
+	<context id="znakomsya" if="empty($UserName)">
 			<output>
 				<item value="И я тебя приветствую, мой друг! Как тебя зовут?" />
 			</output>	
@@ -52,20 +39,16 @@
 				<input pattern="* (*плохо*|*неоч*|*ужас*|*хуе*) *">
 					<output value="Не расстраивайся, жизнь порой бывает сложная штука, всё образуется! :((" />
 				</input>				
-			
-				
-		</context>
-		</input>
-				
+		<input pattern="* пока *">
+	<var name="end_session" value="javascript: true"/>        
+	<output value="Пока-пока!"/>
+ </input> 					
 	</context>
-	
-					
-</input>
-
-	<input pattern="* пока *">
-		<var name="end_session" value="javascript: true"/>        
-		<output value="Пока-пока!"/>
-        </input> 
+		
+ <input pattern="* как дела *">             
+        <output value="У меня всё хорошо!"/>
+ </input>   
+		
 	
 		<context id="anekdot"> 	
          		    <input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">        
@@ -76,6 +59,15 @@
             				<output value="$Result" if="full($Result)" />      
 			     </input>
          	</context>	
+	<context id="aforism">
+       		  <input pattern="* (расскажи*|*афоризм*|расскажи афоризм*) *">            
+           		 <get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
+              			  <param name="CType" value="4"/>                
+            		</get>            
+            			<var name="Result" value="javascript: $Anekdot['root']" />                                                  
+           				 <output value="$Result" if="full($Result)" /> 
+		</input> 	  
+	</context>
 </context>	
 			    
 	
