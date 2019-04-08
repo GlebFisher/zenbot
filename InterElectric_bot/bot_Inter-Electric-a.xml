@@ -6,13 +6,8 @@
             </get>
             
             <var name="Result" value="javascript: $Resultt['root']['content']" />
-
-            <output if="empty($Result)">
-                <item value='Я поискала в википедии, но ничего не нашла по запросу "$Text"'/>
-                <item value="В википедии ничего не нашлось..."/>
-            </output>
-
-            <output value="$Result" if="full($Result)"/>
+           
+            <output value="$Result" />
 
             <input pattern="* (еще|другой вариант) *"/>
 
