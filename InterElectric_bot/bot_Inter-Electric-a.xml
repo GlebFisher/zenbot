@@ -1,10 +1,9 @@
 <context>  
-<input pattern="$Text">
+<input pattern="* (привет*|здравствуй*) *">
             
             <get url="http://rzhunemogu.ru/Rand.aspx?CType=1" var="Anekdot">
                 <param name="format" value="xml"/>
-                <param name="action" value="opensearch"/>
-                <param name="search" value="$Text"/>
+                <param name="action" value="get"/>                
             </get>
             
             <var name="Result" value="javascript: $Anekdot['root']['content']" if="full($Anekdot)"/>
