@@ -1,4 +1,4 @@
-
+<context>
 	
 	
 	<input pattern="* (привет*|здравствуй*) *">
@@ -16,16 +16,8 @@
                 <context/>
             </input>
         </context>
-    </input>
-	
-	
-	
-	
-				
-				
-			
-			
-	<context> 	
+		
+		<context> 	
          <input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">            
             <get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                 <param name="CType" value="1"/>                
@@ -52,6 +44,17 @@
         </input>     
 	  		
 	</context>
+    </input>
+	
+	
+	
+	
+				
+				
+			
+			
+	
 					
 
 
+</context>
