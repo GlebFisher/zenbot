@@ -1,13 +1,13 @@
 <context>  
-<input pattern="* (привет*|здравствуй*) *">
+<input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">
             
-            <get url="http://rzhunemogu.ru/Rand.aspx" var="w">                
+            <get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                 <param name="CType" value="1"/>                
             </get>
             
-            <var name="Result" value="javascript: $w.text" />                    
+            <var name="Result" value="javascript: $Anekdot['content'].text" />                    
            
-            <output value="$Result" />          
+            <output value="$Result" if="full($Result)" />          
      
     </input>
    </context>
