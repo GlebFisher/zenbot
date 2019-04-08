@@ -1,4 +1,7 @@
-        <context id="wiki">
+   <input pattern="$Text">
+        <context id="name" if="empty($UserName)"/>
+
+        <context id="wiki" if="full($UserName)">
             <get url="http://ru.wikipedia.org/w/api.php" var="Wiki">
                 <param name="format" value="xml"/>
                 <param name="action" value="opensearch"/>
@@ -19,3 +22,6 @@
 
             <sample value="Другой вариант"/>
         </context>
+
+
+    </input>
