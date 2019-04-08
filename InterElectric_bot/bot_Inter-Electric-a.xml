@@ -5,10 +5,10 @@
                 <param name="CType" value="1"/>                
             </get>
             
-            <var name="Result" value="javascript: $Anekdot['root'].text" />                    
-           <output if="empty($Result)">
-                <item value='Пошёл нахуй!'/>                
-            </output>
+            <var name="Result" value="javascript: $Anekdot['root']" />
+            
+           <output if="empty($Result)" value="Пошёл нахуй!" />                               
+            
             <output value="$Result" if="full($Result)" />          
      
     </input>
