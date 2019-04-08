@@ -4,8 +4,7 @@
  <input pattern="* как дела *">             
         <output value="У меня всё хорошо!" />
  </input>   
-		
-	
+			
 		
          		    <input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">        
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
