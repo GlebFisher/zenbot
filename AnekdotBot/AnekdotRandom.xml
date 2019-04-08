@@ -1,4 +1,24 @@
+<context>
+	
+	
+	<input pattern="* (привет*|здравствуй*) *">
+        <output if="full($UserName)">
+            <item value="Привет, $UserName! Рада снова видеть тебя!"/>
+            <item value="Здравствуй, $UserName! Я уже успела соскучиться..."/>
+        </output>
 
+        <context if="empty($UserName)" id="name">
+            <output value="Привет! Меня зовут Алиса! А это - демонстрация моего навыка, созданного с помощью платформы zenbot. Как тебя зовут?"/>
+
+            <input pattern="$Text">
+                <var name="UserName" value="cap($Text)" scope="user"/>
+                <output value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
+                <context/>
+            </input>
+        </context>
+    </input>
+	
+	
 	
 	<context if="full($UserName)">
 		
@@ -16,12 +36,6 @@
 			<input pattern="* (*плохо*|*неоч*|*ужас*|*хуе*) *">
 				<output value="Не расстраивайся, жизнь порой бывает сложная штука, всё образуется! :((" />
 			</input>			
-				
-		</input>
-				
-	</context>
-				
-			
 		<context id="name" if="empty($UserName)">
 			<output>
 				<item value="И я тебя приветствую, мой друг! Как тебя зовут?" />
@@ -45,6 +59,11 @@
 			
 				
 		</context>
+		</input>
+				
+	</context>
+				
+				
 			
 			
 	<context> 	
@@ -76,3 +95,4 @@
 	</context>
 					
 
+</context>
