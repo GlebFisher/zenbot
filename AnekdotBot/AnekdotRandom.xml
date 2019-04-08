@@ -1,6 +1,7 @@
-<context> 			
+<context> 		
+	<input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">
 		<context id="anekdot"> 	
-         		<input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">            
+         		            
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                				 <param name="CType" value="1"/>                
             			</get>            
