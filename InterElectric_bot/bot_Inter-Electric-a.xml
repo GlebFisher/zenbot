@@ -6,6 +6,15 @@
             </get>
             
             <var name="Result" value="javascript: $w['node.getElementsByTagName("content")']" />
+            
+            
+             <get url="http://ru.wikipedia.org/w/api.php" var="Wiki">
+                <param name="format" value="xml"/>
+                <param name="action" value="opensearch"/>
+                <param name="search" value="$Text"/>
+            </get>
+             <var name="Items" value="javascript: $Wiki['SearchSuggestion']['Section']['Item']" if="full($Wiki)" scope="context"/>
+            <var name="Result" value="javascript: $Items[Math.floor(Math.random() * $Items.length)]['Description']['content']" if="full($Items)"/>
            
             <output value="$Result" />
 
