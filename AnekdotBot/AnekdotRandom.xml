@@ -15,9 +15,9 @@
 				
 			<input pattern="* (*плохо*|*неоч*|*ужас*|*хуе*) *">
 				<output value="Не расстраивайся, жизнь порой бывает сложная штука, всё образуется! :((" />
-			
+			</input>
 	</context>	
-		</input>
+		
 	<context id="znakomsya" if="empty($UserName)">
 			<output>
 				<item value="И я тебя приветствую, мой друг! Как тебя зовут?" />
@@ -37,13 +37,15 @@
 					
 				<input pattern="* (*плохо*|*неоч*|*ужас*|*хуе*) *">
 					<output value="Не расстраивайся, жизнь порой бывает сложная штука, всё образуется! :((" />
-								
+				</input>
+				
 		<input pattern="* пока *">
 	<var name="end_session" value="javascript: true"/>        
 	<output value="Пока-пока!"/>
+		</context>	
  </input> 					
-	</context>
-		</input>
+	
+		
  <input pattern="* как дела *">             
         <output value="У меня всё хорошо!"/>
  </input>   
@@ -56,9 +58,9 @@
             			</get>            
            			 <var name="Result" value="javascript: $Anekdot['root']" />                                                  
             				<output value="$Result" if="full($Result)" />      
-			    
+			    </input>
          	</context>	
-	</input>
+	
 	<context id="aforism">
        		  <input pattern="* (расскажи*|*афоризм*|расскажи афоризм*) *">            
            		 <get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
@@ -66,9 +68,9 @@
             		</get>            
             			<var name="Result" value="javascript: $Anekdot['root']" />                                                  
            				 <output value="$Result" if="full($Result)" /> 
-			  
+		</input>	  
 	</context>
-</input>
+
 </context>	
 			    
 	
