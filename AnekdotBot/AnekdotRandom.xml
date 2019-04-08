@@ -26,7 +26,7 @@
 			
 			<input pattern="$Name_User_Input">
 				
-				<var name="UserName" value="cap($Name_User_Input)" scope="user">
+				<var name="UserName" value="cap($Name_User_Input)" scope="user" />
 					
 				<output if="full($UserName)">
 					<item value="Будем знакомы, $UserName! Как дела?" />						
