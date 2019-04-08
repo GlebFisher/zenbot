@@ -7,9 +7,8 @@
             			</get>            
            			 <var name="Result" value="javascript: $Anekdot['root']" />                                                  
             				<output value="$Result" if="full($Result)" />      
-			     </input>
-         	</context>
-	
-	
+			    
+         	</context>	
+	 </input>
 	
 
