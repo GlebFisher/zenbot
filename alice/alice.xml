@@ -1,8 +1,10 @@
 <context>
+
     <sample>
         <item value="Кто такая Алиса"/>
         <item value="Что такое бот"/>
     </sample>
+
     <input pattern="* (привет*|здравствуй*) *">
         <output if="full($UserName)">
             <item value="Привет, $UserName! Рада снова видеть тебя!"/>
@@ -53,6 +55,5 @@
 
 
     </input>
-                       
-    
+
 </context>
