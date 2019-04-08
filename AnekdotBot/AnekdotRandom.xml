@@ -1,5 +1,4 @@
-	
-		
+<context> 			
 		<context id="anekdot"> 	
          		<input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">            
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
@@ -10,6 +9,7 @@
 				</input>
          	</context>
 			
+</context>	
 	
 	
 	
