@@ -13,10 +13,7 @@
             <var name="Result" value="javascript: $Items[Math.floor(Math.random() * $Items.length)]['Description']['content']" if="full($Items)" />
            
             <output value="$Result" />
-
-            <input pattern="* (еще|другой вариант) *"/>
-
-            <sample value="Другой вариант"/>
+          
      
     </input>
    </context>
