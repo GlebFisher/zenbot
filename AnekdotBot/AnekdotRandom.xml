@@ -1,8 +1,6 @@
 <context> 
+	<context id="start" if="full($UserName)">		
 	<output value="Привет!" />
-	
-	
-	
 		<input pattern="* (привет*|*здра*|здорова*) *">
 			<output if="full($UserName)">
 				<item value="И я тебя приветствую, $UserName! Как дела?">
@@ -16,7 +14,8 @@
 			</output>	
 				
 		</input>
-			
+	</context>
+				
 			
 		<context id="name" if="empty($UserName)">
 			<output>
