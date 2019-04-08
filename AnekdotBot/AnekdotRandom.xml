@@ -1,6 +1,6 @@
-<context>
+
 	
-	<context id="start" if="full($UserName)">
+	<context if="full($UserName)">
 		
 	<output value="Привет!" />
 		
@@ -75,4 +75,4 @@
 	  		
 	</context>
 					
-</context>
+
