@@ -1,4 +1,5 @@
-   <input pattern="$Text">
+<context>  
+<input pattern="$Text">
         <context id="name" if="empty($UserName)"/>
 
         <context id="wiki" if="full($UserName)">
@@ -25,3 +26,4 @@
 
 
     </input>
+   </context>
