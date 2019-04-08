@@ -1,53 +1,5 @@
 <context>		     	                    
-                  <context id="name" if="full($UserName)">
-					<input pattern="* (привет*|*здра*|здорова*) *">
-					
-	
-								
-		
-		<output if="full($UserName)">
-			<item value="И я тебя приветствую, $UserName! Как дела?" />
-		</output>
-				
-			<input pattern="* (*хорошо*|*норм*|*отлич*|*заеб*) *">
-				<output value="Ну и отлично!" />
-			</input>			
-				
-			<input pattern="* (*плохо*|*неоч*|*ужас*|*хуе*) *">
-				<output value="Не расстраивайся, жизнь порой бывает сложная штука, всё образуется! :((" />
-			</input>
-			
-			</input>
-			
-			</context>	
-	
-	<context id="znakomsya" if="empty($UserName)">
-			<output>
-				<item value="И я тебя приветствую, мой друг! Как тебя зовут?" />
-			</output>	
-			
-			<input pattern="$Name_User_Input">
-				
-				<var name="UserName" value="cap($Name_User_Input)" scope="user" />
-					
-				<output if="full($UserName)">
-					<item value="Будем знакомы, $UserName! Как дела?" />						
-				</output>
-			</input>		
-				<input pattern="* (*хорошо*|*норм*|*отлич*|*заеб*) *">
-					<output value="Ну и отлично!" />
-				</input>
-					
-				<input pattern="* (*плохо*|*неоч*|*ужас*|*хуе*) *">
-					<output value="Не расстраивайся, жизнь порой бывает сложная штука, всё образуется! :((" />
-				</input>
-				
-		<input pattern="* пока *">
-			<var name="end_session" value="javascript: true"/>        
-			<output value="Пока-пока!"/>
-		</input> 
-		
-		</context>	
+                 
 					
 		
 		
@@ -83,5 +35,3 @@
 	
 
 </context>	
-  
-
