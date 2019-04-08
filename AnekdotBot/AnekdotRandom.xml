@@ -1,5 +1,6 @@
 <context>	
  <input pattern="* как дела *">             
         <output value="У меня всё хорошо!"/>
- </input>   
+  
 </context>	
+ </input> 
