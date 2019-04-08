@@ -1,5 +1,6 @@
 <context>  
-         <input pattern="* (ðàññêàæè*|*àíåêäîò*|ðàññêàæè àíåêäîò*) *">            
+        <context>  
+         <input pattern="* (Ñ€Ð°ÑÑÐºÐ°Ð¶Ð¸*|*Ð°Ð½ÐµÐºÐ´Ð¾Ñ‚*|Ñ€Ð°ÑÑÐºÐ°Ð¶Ð¸ Ð°Ð½ÐµÐºÐ´Ð¾Ñ‚*) *">            
             <get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                 <param name="CType" value="1"/>                
             </get>            
@@ -7,7 +8,7 @@
             <output value="$Result" if="full($Result)" />         
          </input>
             
-         <input pattern="* (ðàññêàæè*|*àôîðèçì*|ðàññêàæè àôîðèçì*) *">            
+         <input pattern="* (Ñ€Ð°ÑÑÐºÐ°Ð¶Ð¸*|*Ð°Ñ„Ð¾Ñ€Ð¸Ð·Ð¼*|Ñ€Ð°ÑÑÐºÐ°Ð¶Ð¸ Ð°Ñ„Ð¾Ñ€Ð¸Ð·Ð¼*) *">            
             <get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                 <param name="CType" value="4"/>                
             </get>            
@@ -15,16 +16,16 @@
             <output value="$Result" if="full($Result)" />         
          </input>   
             
-        <input pattern="* ïîêà *">
+        <input pattern="* Ð¿Ð¾ÐºÐ° *">
         <var name="end_session" value="javascript: true"/>        
-        <output value="Ïîêà-ïîêà!"/>
+        <output value="ÐŸÐ¾ÐºÐ°-Ð¿Ð¾ÐºÐ°!"/>
         </input>   
             
-        <input pattern="* êàê äåëà *">             
-        <output value="Ó ìåíÿ âñ¸ õîðîøî!"/>
-        </input> 
+        <input pattern="* ÐºÐ°Ðº Ð´ÐµÐ»Ð° *">             
+        <output value="Ð£ Ð¼ÐµÐ½Ñ Ð²ÑÑ‘ Ñ…Ð¾Ñ€Ð¾ÑˆÐ¾!"/>
+        </input>     
 
 		<input pattern="*">             
-        <output value="Ïîø¸ë íàõóé!!"/>
+        <output value="FUCK YOU!!!"/>
         </input>   		
 </context>
