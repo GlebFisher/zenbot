@@ -18,7 +18,7 @@
 				<output value="Не расстраивайся, жизнь порой бывает сложная штука, всё образуется! :((" />
 			</input>
 	</context>	
-		
+		</input>
 	<context id="znakomsya" if="empty($UserName)">
 			<output>
 				<item value="И я тебя приветствую, мой друг! Как тебя зовут?" />
@@ -44,7 +44,7 @@
 	<output value="Пока-пока!"/>
  </input> 					
 	</context>
-		
+		</input>
  <input pattern="* как дела *">             
         <output value="У меня всё хорошо!"/>
  </input>   
@@ -59,6 +59,7 @@
             				<output value="$Result" if="full($Result)" />      
 			     </input>
          	</context>	
+	</input>
 	<context id="aforism">
        		  <input pattern="* (расскажи*|*афоризм*|расскажи афоризм*) *">            
            		 <get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
@@ -68,6 +69,7 @@
            				 <output value="$Result" if="full($Result)" /> 
 		</input> 	  
 	</context>
+</input>
 </context>	
 			    
 	
