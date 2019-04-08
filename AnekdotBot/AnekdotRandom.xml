@@ -1,8 +1,8 @@
 <context>		     	                    
-                  
+                  <context id="name" if="full($UserName)">
 					<input pattern="* (привет*|*здра*|здорова*) *">
 					
-	<context id="name" if="full($UserName)">
+	
 								
 		
 		<output if="full($UserName)">
@@ -17,7 +17,7 @@
 				<output value="Не расстраивайся, жизнь порой бывает сложная штука, всё образуется! :((" />
 			</input>
 			
-	</context>	
+	
 	
 	<context id="znakomsya" if="empty($UserName)">
 			<output>
@@ -44,12 +44,12 @@
 			<var name="end_session" value="javascript: true"/>        
 			<output value="Пока-пока!"/>
 		</input> 
-		</input>
+		
 		</context>	
 					
+		</input>
 		
-		
-		
+		</context>	
 		
 	
  					
