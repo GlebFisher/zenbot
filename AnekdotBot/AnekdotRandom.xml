@@ -1,23 +1,6 @@
-<context>
-	
-	
-	<input pattern="* (привет*|здравствуй*) *">
-        <output if="full($UserName)">
-            <item value="Привет, $UserName! Рада снова видеть тебя!"/>
-            <item value="Здравствуй, $UserName! Я уже успела соскучиться..."/>
-        </output>
-
-        <context if="empty($UserName)" id="name">
-            <output value="Привет! Меня зовут Алиса! А это - демонстрация моего навыка, созданного с помощью платформы zenbot. Как тебя зовут?"/>
-
-            <input pattern="$Text">
-                <var name="UserName" value="cap($Text)" scope="user"/>
-                <output value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
-                <context/>
-            </input>
-        </context>
+<context>	
 		
-		<context> 	
+		<context id="anekdot"> 	
          <input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">            
             <get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                 <param name="CType" value="1"/>                
@@ -52,7 +35,7 @@
 				
 				
 			
-			<context if="full($UserName)">
+			<context id="name" if="full($UserName)">
 		
 	<output value="Привет!" />
 		
