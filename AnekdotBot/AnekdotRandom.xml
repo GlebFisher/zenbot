@@ -1,4 +1,4 @@
-<context>	
+	
 		
 		<context id="anekdot"> 	
          		<input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">            
@@ -13,4 +13,4 @@
 	
 	
 	
-</context>
+
