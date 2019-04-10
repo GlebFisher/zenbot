@@ -1,22 +1,21 @@
-
- <context>
+<context>
          		    <input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">        
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                				 <param name="CType" value="1" />                
             			</get>            
            			 <var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
-            				<output value="$Result" if="full($Result)" />      
-	 </input>		    
+            				<output value="$Result" if="full($Result)"/>      
+			      </input>		    
   </context>
 	
 						
  <context>  
        		  <input pattern="* (расскажи*|*афоризм*|расскажи афоризм*) *">            
            		 <get url="http://rzhunemogu.ru/Rand.aspx" var="Aforism">                
-              			  <param name="CType" value="4" />                
+              			  <param name="CType" value="4"/>                
             		</get>            
-            			<var name="Result" value="javascript: $Aforism['root']" scope="context" />                                                  
-           				 <output value="$Result" if="full($Result)" /> 
+            			<var name="Result" value="javascript: $Aforism['root']" scope="context"/>                                                  
+           				 <output value="$Result" if="full($Result)"/> 
 			
 	 
 </input>	
