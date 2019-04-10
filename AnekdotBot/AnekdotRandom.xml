@@ -1,4 +1,4 @@
- <context>
+  <context>
 	 			<input pattern="* (привет*|*здра*|здорова*) *">
 			
 				<output if="full($UserName)">
@@ -57,8 +57,7 @@
 						
 					</context>
 
-					
- <context id="anekdot">
+
          		    <input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">        
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                				 <param name="CType" value="1"/>                
@@ -66,9 +65,9 @@
            			 <var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
             				<output value="$Result" if="full($Result)" />      
 			    </input>
-  </context>
+
 						
- <context id="aforism">  
+ 
        		  <input pattern="* (расскажи*|*афоризм*|расскажи афоризм*) *">            
            		 <get url="http://rzhunemogu.ru/Rand.aspx" var="Aforism">                
               			  <param name="CType" value="4"/>                
@@ -78,9 +77,10 @@
 		</input>	
 	 
 	
-</context>
 
 
+
 </context>
+
 
 
