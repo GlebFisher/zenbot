@@ -1,38 +1,117 @@
  <context>
-			  <output value="Привет!" />	
-	 		
-	 		<input pattern="*Прив*">
-				<output value="Как дела?" />	
-			</input>	
+ <output value="Привет!" />
+	 			<input pattern="* (привет*|*здра*|здорова*) *">
+			
+				<output if="full($UserName)">
+					<item value="И я тебя приветствую, $UserName! Как дела?" />
+				</output>
+				
+				</input> 
+				
+				
+					<context if="empty($UserName)" id="name">
+						<output if="empty($UserName)">
+							<item value="И я тебя приветствую, мой друг! Как тебя зовут?" />
+						</output>	
+			
+						<input pattern="$Text">				
+							<var name="UserName" value="cap($Text)" scope="user" />					
+								<output>
+									<item value="Будем знакомы, $UserName! Как дела?" />						
+								</output>
+						</input>
+						
+						<input pattern="*пока*">
+							<var name="end_session" value="javascript: true" />        
+							<output value="Пока!" />
+						</input> 
+					 </context>	
+					 
+					  <context>			  
 	 		
 	 
 			<input pattern="* (*хорошо*|*норм*|*отлич*|*заеб*) *">
-				<output value="Ну и отлично!" />				
+				<output value="Ну и отлично!" />					
 			</input>
 					
 			<input pattern="* (*плохо*|*неоч*|*ужас*|*хуе*) *">
 				<output value="Не расстраивайся, жизнь порой бывает сложная штука, всё образуется! Хочешь анекдот? :))" />
 				<var name="no" value="nooooooooo" />
-			</input>									
-						
-				
-					 	
-					<input pattern="* (*да*|*хоч*|*кон*|*кан*) *">
+			</input>	
+
+			<input pattern="* (*да*|*хоч*|*кон*|*кан*) *">
 							<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
 							<param name="CType" value="1" />                
-							</get>            
-						<var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
-						<output value="$Result" if="full($Result)" />
-					</input>
+							</get>  
+					<var name="yeeee" value="javascript: $Anekdot['root']" scope="context" /> 
+			</input>	
+												 	
+				    <output value="$yeeee" if="full($yeeee)" />
+				
 							
 					 
 						
 				
-				<input pattern="* (*нет*|*фу*|*ррррр*|*а*) *">								
+				<input pattern="*не*">								
 					                                                  
             			  <output value="Обойдёмся без анекдотов" if="full($no)" />
 														
 				</input>
+					  
+					  									
+																
+					</context>
+					
+				
+				
+				
+				
+				
+				
+				<context>			  
+	 		<input pattern="*как дела*">             
+						<output value="У меня всё хорошо! А у тебя как?" />
+						<var name="kakdela" value="kakdelakakdela" scope="context" /> 
+				</input>
+	 
+			<input pattern="*тож*">
+				<output if="full($kakdela)" value="Супер!" />					
+			</input>
+									
+			<input pattern="* (*да*|*хоч*|*кон*|*кан*) *">
+							<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
+							<param name="CType" value="1" />                
+							</get>  
+					<var name="kakdelakakdelakakdela" value="javascript: $Anekdot['root']" scope="context" /> 
+			</input>	
+												 	
+				    <output value="$kakdelakakdelakakdela" if="full($kakdelakakdelakakdela)" />
+										  
+					  										
+					</context>
+					
+					
+					
+					
+					
+
+         		    <input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">        
+            			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
+               				 <param name="CType" value="1"/>                
+            			</get>            
+           			 <var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
+            				<output value="$Result" if="full($Result)" />      
+					</input>
+
 						
-						
+ 
+       		  <input pattern="* (расскажи*|*афоризм*|расскажи афоризм*) *">            
+           		 <get url="http://rzhunemogu.ru/Rand.aspx" var="Aforism">                
+              			  <param name="CType" value="4" />                
+            		</get>            
+            			<var name="Result" value="javascript: $Aforism['root']" scope="context" />                                                  
+           				 <output value="$Result" if="full($Result)" /> 
+			 </input>	
+	 	
+
 </context>
