@@ -1,10 +1,5 @@
 <context>
- <input pattern="* (привет*|*здра*|здорова*) *">
-			
-				<output>
-					<item value="И я тебя приветствую,! Как дела?" />
-				</output>
-				
-				</input> 
-
+ <input pattern="* (привет*|*здра*|здорова*) *">			
+				<output value="И я тебя приветствую,! Как дела?" />					
+</input> 
 </context>
