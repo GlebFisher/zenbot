@@ -1,5 +1,5 @@
-<context>
- <context id="anekdot">
+
+ <context>
          		    <input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">        
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                				 <param name="CType" value="1"/>                
@@ -9,7 +9,7 @@
 			    </input>
   </context>
 						
- <context id="aforism">  
+ <context>  
        		  <input pattern="* (расскажи*|*афоризм*|расскажи афоризм*) *">            
            		 <get url="http://rzhunemogu.ru/Rand.aspx" var="Aforism">                
               			  <param name="CType" value="4"/>                
@@ -19,4 +19,4 @@
 		</input>	
 	 
 	
-</context></context>
+</context>
