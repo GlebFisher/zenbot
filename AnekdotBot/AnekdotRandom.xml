@@ -49,7 +49,7 @@
 						 <input pattern="* как дела *">             
 							<output value="У меня всё хорошо!"/>
 						 </input>   
- </context> </context>
+ </context> </context></context>
  <context id="anekdot">
          		    <input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">        
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
@@ -70,4 +70,4 @@
 		</input>	
 	 
 	
-</context></context>
+</context>
