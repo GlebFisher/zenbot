@@ -7,7 +7,7 @@
            			 <var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
             				<output value="$Result" if="full($Result)" />      
 			    
-  </context>
+  <context>
 	 </input>
 						
  <context>  
@@ -20,5 +20,5 @@
 			
 	 
 	
-</context>
-</input>
+<context>
+<input>
