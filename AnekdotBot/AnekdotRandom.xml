@@ -4,7 +4,10 @@
 				<output if="full($UserName)">
 					<item value="И я тебя приветствую, $UserName! Как дела?" />
 				</output>
-
+				
+				</input> 
+				
+				
 					<context if="empty($UserName)" id="name">
 						<output>
 							<item value="И я тебя приветствую, мой друг! Как тебя зовут?" />
@@ -47,7 +50,7 @@
 							<output value="Пока-пока!"/>
 						</input> 
 						
-					</input> 
+					
 						
 					</context>
 	 <context>
@@ -73,3 +76,5 @@
 	
 </context></context>
 </context>
+
+
