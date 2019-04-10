@@ -17,9 +17,9 @@
 							</get>            
 						<var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
 						<output value="$Result" if="full($Result)" />
-					</input>
+					
 					</context>		
-					 
+					 </input>
 						
 				
 				<input pattern="* (*нет*|*фу*|*ррррр*|*а*) *">								
