@@ -1,81 +1,59 @@
-  <context>
- 
-	 			<input pattern="* (привет*|*здра*|здорова*) *">
-			
-				<output if="full($UserName)">
-					<item value="И я тебя приветствую, $UserName! Как дела?" />
-				</output>
-				
-				</input> 
-				
-				
-					<context if="empty($UserName)" id="name">
-						<output>
-							<item value="И я тебя приветствую, мой друг! Как тебя зовут?" />
-						</output>	
-			
-						<input pattern="$Text">				
-							<var name="UserName" value="cap($Text)" scope="user" />					
-								<output>
-									<item value="Будем знакомы, $UserName! Как дела?" />						
-								</output>
-						</input>
-						
-						<input pattern="* (*хорошо*|*норм*|*отлич*|*заеб*) *">
-							<output value="Ну и отлично!" />
-						</input>
-					
-						<input pattern="* (*плохо*|*неоч*|*ужас*|*хуе*) *">
-							<output value="Не расстраивайся, жизнь порой бывает сложная штука, всё образуется! Хочешь анекдот? :))" />
-							<var name="allisgood" value="yes" />		
-						</input>
-						
-						
-						
-						<context if="full($allisgood)">
-						
-							<input pattern="* (*да*|*хоч*|*кон*|*кан*) *">
-								<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
-               				 <param name="CType" value="1"/>                
-            			</get>            
-           			 <var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
-            				<output value="$Result" if="full($Result)" />
-							</input>
-							
-						</context>	 
-						
-						
-					<input pattern="* как дела *">             
-							<output value="У меня всё хорошо!"/>
-						 </input>
-						
-						<input pattern="* пока *">
-							<var name="end_session" value="javascript: true"/>        
-							<output value="Пока-пока!"/>
-						</input> 
-						
-					
-						
-					</context>
+ <context>
+
+    <sample>
+        <item value="Кто такая Алиса"/>
+        <item value="Что такое бот"/>
+    </sample>
+
+    <input pattern="* (привет*|здравствуй*) *">
+        <output if="full($UserName)">
+            <item value="Привет, $UserName! Рада снова видеть тебя!"/>
+            <item value="Здравствуй, $UserName! Я уже успела соскучиться..."/>
+        </output>
+
+        <context if="empty($UserName)" id="name">
+            <output value="Привет! Меня зовут Алиса! А это - демонстрация моего навыка, созданного с помощью платформы zenbot. Как тебя зовут?"/>
+
+            <input pattern="$Text">
+                <var name="UserName" value="cap($Text)" scope="user"/>
+                <output value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
+                <context/>
+            </input>
+        </context>
+    </input>
+
+    <input pattern="* пока *">
+        <var name="end_session" value="javascript: true"/>
+        <output value="Ну пока, незнакомец!" if="empty($UserName)"/>
+        <output value="Пока-пока, $UserName!"/>
+    </input>
+
+    <input pattern="[* (кто|что) так*] $Text">
+        <context id="name" if="empty($UserName)"/>
+
+        <context id="wiki" if="full($UserName)">
+            <get url="http://ru.wikipedia.org/w/api.php" var="Wiki">
+                <param name="format" value="xml"/>
+                <param name="action" value="opensearch"/>
+                <param name="search" value="$Text"/>
+            </get>
+
+            <var name="Items" value="javascript: $Wiki['SearchSuggestion']['Section']['Item']" if="full($Wiki)" scope="context"/>
+            <var name="Result" value="javascript: $Items[Math.floor(Math.random() * $Items.length)]['Description']['content']" if="full($Items)"/>
+
+            <output if="empty($Result)">
+                <item value='Я поискала в википедии, но ничего не нашла по запросу "$Text"'/>
+                <item value="В википедии ничего не нашлось..."/>
+            </output>
+
+            <output value="$Result" if="full($Result)"/>
+
+            <input pattern="* (еще|другой вариант) *"/>
+
+            <sample value="Другой вариант"/>
+        </context>
 
 
-         		    <input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">        
-            			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
-               				 <param name="CType" value="1"/>                
-            			</get>            
-           			 <var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
-            				<output value="$Result" if="full($Result)" />      
-					</input>
-
-						
- 
-       		  <input pattern="* (расскажи*|*афоризм*|расскажи афоризм*) *">            
-           		 <get url="http://rzhunemogu.ru/Rand.aspx" var="Aforism">                
-              			  <param name="CType" value="4"/>                
-            		</get>            
-            			<var name="Result" value="javascript: $Aforism['root']" scope="context" />                                                  
-           				 <output value="$Result" if="full($Result)" /> 
-			 </input>	
-	 	
+    </input>
 
 </context>
