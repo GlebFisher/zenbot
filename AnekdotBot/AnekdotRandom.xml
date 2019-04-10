@@ -1,6 +1,4 @@
-<context>		     
-           	
-			
+<context>	  
 			<input pattern="* (привет*|*здра*|здорова*) *">
 			
 				<output if="full($UserName)">
@@ -24,7 +22,14 @@
 						</input>
 					
 						<input pattern="* (*плохо*|*неоч*|*ужас*|*хуе*) *">
-							<output value="Не расстраивайся, жизнь порой бывает сложная штука, всё образуется! :((" />
+							<output value="Не расстраивайся, жизнь порой бывает сложная штука, всё образуется! Хочешь анекдот? :((" />
+							<input pattern="* (*да*|*хоч*|*кон*|*кан*) *">
+								<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
+               				 <param name="CType" value="1"/>                
+            			</get>            
+           			 <var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
+            				<output value="$Result" if="full($Result)" />
+							</input>	
 						</input>
 						<input pattern="* пока *">
 			<var name="end_session" value="javascript: true"/>        
