@@ -16,7 +16,7 @@
 							<param name="CType" value="1" />                
 							</get>            
 						<var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
-						<output value="$Result" if="full($Result && $yes)" />
+						<output value="$Result" if="full($Result)&&($yes)" />
 					</input>
 							
 					 
