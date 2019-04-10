@@ -1,6 +1,6 @@
 <context>
   <input pattern="*">	
-	  <output value="Пошел нахуй, пёс!"/>
+	  <output value="123"/>
   </input>
 </context>
 
