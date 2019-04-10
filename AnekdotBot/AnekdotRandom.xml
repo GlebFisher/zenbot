@@ -10,16 +10,16 @@
 			</input>									
 						
 				
-					 <context if="full($yes)">	
+					 	
 					<input pattern="* (*да*|*хоч*|*кон*|*кан*) *">
 							<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
 							<param name="CType" value="1" />                
 							</get>            
 						<var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
-						<output value="$Result" if="full($Result)" />
-					
-					</context>		
-					 </input>
+						<output value="$Result" if="full($yes)" />
+					</input>
+							
+					 
 						
 				
 				<input pattern="* (*нет*|*фу*|*ррррр*|*а*) *">								
