@@ -62,7 +62,7 @@
             				<output value="$Result" if="full($Result)" />      
 					</input>
 	 </context>  <context id="citat" if="full($citat)">
-				<input pattern="*цитат*">        
+				<input pattern="*(*цитат*)*">        
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                				 <param name="CType" value="5"/>                
             			</get>            
@@ -72,7 +72,7 @@
 					</input>
 	 </context>
 	  </context>  <context id="tost" if="full($tost)">
-	 <input pattern="*тост*">        
+	 <input pattern="*(*тост*)*">        
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                				 <param name="CType" value="6"/>                
             			</get>            
@@ -91,7 +91,7 @@
             				<output value="$Result" if="full($Result)" />      
 					</input> </context>
 	  <context id="stihi" if="full($stihi)">
-	 <input pattern="*сти*">        
+	 <input pattern="*(*сти*)*">        
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                				 <param name="CType" value="3"/>                
             			</get>            
@@ -100,7 +100,7 @@
             				<output value="$Result" if="full($Result)" />      
 					</input> </context>
 	 	 <context id="status" if="full($status)">	 
-	 <input pattern="*ст*">        
+	 <input pattern="*(*ст*)*">        
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                				 <param name="CType" value="8"/>                
             			</get>            
@@ -121,5 +121,11 @@
            				 <output value="$Result" if="full($Result)" /> 
 			 </input>	
 	 	</context>
-
+<input pattern="*">
+	<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
+               				 <param name="CType" value="3"/>                
+            			</get>            
+           			 <var name="stihnavse" value="javascript: $Anekdot['root']" />
+            				<output value="$stihnavse" if="full($stihnavse)" />  
+</input>
 </context>
