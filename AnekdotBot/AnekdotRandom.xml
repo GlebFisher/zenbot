@@ -1,36 +1,16 @@
  <context>
- <output value="Привет!" />
-	 			<input pattern="* (привет*|*здра*|здорова*) *">
+		<output value="Привет!" />
+		
+	 			<input pattern="* (привет*|*здра*|*здорова*|*ха*|*хэл*|*hello*|*hi*) *">
 			
-				<output if="full($UserName)">
-					<item value="И я тебя приветствую, $UserName! Как дела?" />
+				<output>
+					<item value="И я тебя приветствую, мой друг, как дела?" />
 				</output>
 				
 				</input> 
-				
-				
-					<context if="empty($UserName)" id="name">
-						<output if="empty($UserName)">
-							<item value="И я тебя приветствую, мой друг! Как тебя зовут?" />
-						</output>	
-			
-						<input pattern="$Text">				
-							<var name="UserName" value="cap($Text)" scope="user" />					
-								<output>
-									<item value="Будем знакомы, $UserName! Как дела?" />						
-								</output>
-						</input>
 						
-						<input pattern="*пока*">
-							<var name="end_session" value="javascript: true" />        
-							<output value="Пока!" />
-						</input> 
-					 </context>	
-					 
-					  <context>			  
-	 		
 	 
-			<input pattern="* (*хорошо*|*норм*|*отлич*|*заеб*) *">
+			<input pattern="* (*хорошо*|*норм*|*отлич*|*за*|*лучш*|*гуд*) *">
 				<output value="Ну и отлично!" />					
 			</input>
 					
@@ -44,50 +24,28 @@
 							<param name="CType" value="1" />                
 							</get>  
 					<var name="yeeee" value="javascript: $Anekdot['root']" scope="context" /> 
+					<output value="$yeeee" if="full($yeeee)" />
 			</input>	
 												 	
-				    <output value="$yeeee" if="full($yeeee)" />
-				
-							
-					 
-						
-				
-				<input pattern="*не*">								
+				    
+				<input pattern="* (*не*|*но*|*no*) *">								
 					                                                  
             			  <output value="Обойдёмся без анекдотов" if="full($no)" />
 														
 				</input>
 					  
-					  									
-																
-					</context>
-					
-				
-				
-				
-				
+					  
 				
 				
 				<context>			  
 	 		<input pattern="*как дела*">             
 						<output value="У меня всё хорошо! А у тебя как?" />
-						<var name="kakdela" value="kakdelakakdela" scope="context" /> 
+						<var name="kakdela" value="Супер!" scope="context" /> 
 				</input>
 	 
 			<input pattern="*тож*">
 				<output if="full($kakdela)" value="Супер!" />					
-			</input>
-									
-			<input pattern="* (*да*|*хоч*|*кон*|*кан*) *">
-							<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
-							<param name="CType" value="1" />                
-							</get>  
-					<var name="kakdelakakdelakakdela" value="javascript: $Anekdot['root']" scope="context" /> 
-			</input>	
-												 	
-				    <output value="$kakdelakakdelakakdela" if="full($kakdelakakdelakakdela)" />
-										  
-					  										
+			</input>																
 					</context>
 					
 					
