@@ -1,7 +1,7 @@
  <context>
 		<output value="Привет!" />
 		
-	 			<input pattern="* (привет*|*здра*|*здорова*|*ха*|*хэл*|*hello*|*hi*) *">
+	 			<input pattern="* (*привет*|*здра*|*здорова*|*ха*|*хэл*|*hello*|*hi*) *">
 			
 				<output>
 					<item value="И я тебя приветствую, мой друг, как дела?" />
@@ -53,17 +53,56 @@
 					
 					
 
-         		    <input pattern="* (расскажи*|*анекдот*|расскажи анекдот*) *">        
+         		    <input pattern="* (*анек*|*расскажи анекдот*) *">        
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                				 <param name="CType" value="1"/>                
             			</get>            
            			 <var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
             				<output value="$Result" if="full($Result)" />      
 					</input>
-
+	 
+				<input pattern="*цитат*">        
+            			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
+               				 <param name="CType" value="5"/>                
+            			</get>            
+           			 <var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
+            				<output value="$Result" if="full($Result)" />      
+					</input>
+	 
+	 <input pattern="*тост*">        
+            			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
+               				 <param name="CType" value="6"/>                
+            			</get>            
+           			 <var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
+            				<output value="$Result" if="full($Result)" />      
+					</input>
+	 
+	 <input pattern="*(*рассказ*|*расскажи*|*рас*)*">        
+            			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
+               				 <param name="CType" value="2"/>                
+            			</get>            
+           			 <var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
+            				<output value="$Result" if="full($Result)" />      
+					</input>
+	 
+	 <input pattern="*сти*">        
+            			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
+               				 <param name="CType" value="3"/>                
+            			</get>            
+           			 <var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
+            				<output value="$Result" if="full($Result)" />      
+					</input>
+	 	 	 
+	 <input pattern="*ст*">        
+            			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
+               				 <param name="CType" value="8"/>                
+            			</get>            
+           			 <var name="Result" value="javascript: $Anekdot['root']" scope="context" />                                                  
+            				<output value="$Result" if="full($Result)" />      
+					</input>
 						
  
-       		  <input pattern="* (расскажи*|*афоризм*|расскажи афоризм*) *">            
+       		  <input pattern="* (*афор*|*расскажи афоризм*) *">            
            		 <get url="http://rzhunemogu.ru/Rand.aspx" var="Aforism">                
               			  <param name="CType" value="4" />                
             		</get>            
