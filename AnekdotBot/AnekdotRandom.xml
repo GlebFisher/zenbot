@@ -52,7 +52,7 @@
 					
 					
 					
- <context id="anekdot" if="full($anek)">
+ 
          		    <input pattern="* (*анек*|*расскажи анекдот*) *">        
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                				 <param name="CType" value="1"/>                
@@ -61,7 +61,7 @@
 				    <var name="anek" value="anek" />
             				<output value="$Result" if="full($Result)" />      
 					</input>
-	 </context>  <context id="citat" if="full($citat)">
+	
 				<input pattern="*(*цитат*)*">        
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                				 <param name="CType" value="5"/>                
@@ -70,8 +70,8 @@
 				 <var name="citat" value="citat" />   
             				<output value="$Result" if="full($Result)" />      
 					</input>
-	 </context>
-	  </context>  <context id="tost" if="full($tost)">
+	
+	 
 	 <input pattern="*(*тост*)*">        
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                				 <param name="CType" value="6"/>                
@@ -80,8 +80,8 @@
 		  <var name="tost" value="tost" />
             				<output value="$Result" if="full($Result)" />      
 					</input>
-	  </context>
-    <context id="rasskaz" if="full($rasskaz)">
+	  
+   
 	 <input pattern="*(*рассказ*|*расскажи*|*рас*)*">        
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                				 <param name="CType" value="2"/>                
@@ -89,8 +89,8 @@
            			 <var name="Result" value="javascript: $Anekdot['root']" scope="rasskaz" /> 
 		 <var name="rasskaz" value="rasskaz" />   
             				<output value="$Result" if="full($Result)" />      
-					</input> </context>
-	  <context id="stihi" if="full($stihi)">
+					</input> 
+	  
 	 <input pattern="*(*сти*)*">        
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                				 <param name="CType" value="3"/>                
@@ -98,8 +98,8 @@
            			 <var name="Result" value="javascript: $Anekdot['root']" scope="stihi" />
 		 <var name="stihi" value="stihi" />  
             				<output value="$Result" if="full($Result)" />      
-					</input> </context>
-	 	 <context id="status" if="full($status)">	 
+					</input> 
+	 	 	 
 	 <input pattern="*(*ст*)*">        
             			<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                				 <param name="CType" value="8"/>                
@@ -108,9 +108,9 @@
 		 <var name="status" value="status" />   
             				<output value="$Result" if="full($Result)" />      
 					</input>
-</context>
 
-				 <context id="aforism" if="full($aforism)">	
+
+				 
  
        		  <input pattern="* (*афор*|*расскажи афоризм*) *">            
            		 <get url="http://rzhunemogu.ru/Rand.aspx" var="Aforism">                
@@ -120,7 +120,7 @@
 			  <var name="aforism" value="aforism" /> 
            				 <output value="$Result" if="full($Result)" /> 
 			 </input>	
-	 	</context>
+	 	
 <input pattern="*">
 	<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
                				 <param name="CType" value="3"/>                
