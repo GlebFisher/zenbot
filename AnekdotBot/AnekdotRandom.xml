@@ -137,7 +137,7 @@
                 <param name="region" value="213.xml"/>
             </get>
 
-		 <var name="Result" value="javascript: $PogodaInMoscow['info']['traffic']['region']" scope="pogoda" />
+		 <var name="Result" value="javascript: $PogodaInMoscow['info']['traffic']['region']['213', 'hint=[{lang=ru, content=Движение затруднено}'] scope="pogoda" />
 			  <var name="pogoda" value="pogoda" /> 
 		
             
