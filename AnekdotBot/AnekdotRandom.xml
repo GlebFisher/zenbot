@@ -137,7 +137,7 @@
                 <param name="region" value="213.xml"/>
             </get>
 
-		 <var name="Result" value="javascript: $traffic['info']['traffic']['region']['length']['hint']" scope="traff" />
+		 <var name="Result" value="javascript: $traffic['info']['traffic']['region']['hint']['ru']" scope="traff" />
 		 			   <var name="traff" value="traff" /> 
 		
             
