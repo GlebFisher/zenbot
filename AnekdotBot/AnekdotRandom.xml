@@ -148,10 +148,11 @@
                 <item value="В википедии ничего не нашлось..."/>
             </output>  --> 
 
-		 <output value="Уровень пробок в Москве составляет"/>
-            <output value="$Result" if="full($Result)"/>
-		  <output value="баллов"/>
-		 <output value="$Result2" if="full($Result2)"/>
+		 
+		 <output if="full($Result)">
+                <item value='Уровень пробок в Москве составляет: "$Result" баллов, это значит, что "$Result2" '/>                
+            </output>
+		 
 	 </input>
 	 
 	 
