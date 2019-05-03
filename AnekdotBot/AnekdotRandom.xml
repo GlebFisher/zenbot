@@ -122,11 +122,7 @@
 			 </input>	
 	 	
 <input pattern="*">
-	<get url="http://rzhunemogu.ru/Rand.aspx" var="Anekdot">                
-               				 <param name="CType" value="3"/>                
-            			</get>            
-           			 <var name="stihnavse" value="javascript: $Anekdot['root']" />
-            				<output value="$stihnavse" if="full($stihnavse)" />  
+	<output value="Hallo $UserName!" channel="telegram"/>  
 </input>
 	 
 	 
@@ -137,8 +133,8 @@
                 <param name="region" value="213.xml"/>
             </get>
 
-		 <var name="Result" value="javascript: $traffic['info']['traffic']['hint']['lang':'ru']" scope="traff" />
-		 			   <var name="traff" value="traff" /> 
+		 <var name="Result" value="javascript: $traffic['info']['traffic']['region']['url']" scope="traff" />
+		 			 
 		
             
      <!--        <output if="empty($Result)">
@@ -164,4 +160,19 @@
             </output>
 	
 	 </input>
+	 
+	 <input pattern="*(*угадай|*число*|*игра*|*game*)*">
+		 
+	<var name="RandomValueForGame" value="javascript: Math.floor(Math.random()*10)" />
+		 <output value="Мною загадано число от 0 до 10, попробуй его отгадать." if="full($RandomValueForGame)" />
+		 
+		 <input pattern="$otvetUser">
+			 <output if="full($otvetUser) and $RandomValueForGame == $otvetUser" value="Да, всё верно! Вы угадали!"/>
+		 </input>
+	
+	 </input>
+	 
+	 
+	 
+	 
 </context>
