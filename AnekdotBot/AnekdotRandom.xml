@@ -138,7 +138,7 @@
             </get>
 
 		 <var name="Result" value="javascript: $traffic['info']['traffic']['region']['level']" scope="traff" />
-		 			   
+		 			   <var name="traff" value="traff" /> 
 		
             
      <!--        <output if="empty($Result)">
