@@ -156,7 +156,7 @@
 	 </input>
 	 
 	 <input pattern="*(*рандом|*случа*|*rand*)*">
-		 <var name="RandomValue" value="javascript: Math.floor(Math.random(min,max)*1000)" />
+		 <var name="RandomValue" value="javascript: Math.floor(Math.random()*1000)" />
 	 <output value="$RandomValue" if="full($RandomValue)" /> 
 	 </input>
 </context>
