@@ -171,8 +171,8 @@
 	 </input>
 	 
 	 <input pattern="$otvetUser">
-		 <var name="otvetUser" value="$otvetUser">
-		<output if="full($otvetUser) and $RandomValueForGame == $otvetUser" value="Да, всё верно! Вы угадали!"/>
+		 <var name="OtvetUser" value="$otvetUser">
+		<output if="$RandomValueForGame == $OtvetUser" value="Да, всё верно! Вы угадали!"/>
 	 </input>
 	 
 	 
