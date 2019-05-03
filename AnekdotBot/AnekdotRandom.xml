@@ -132,15 +132,13 @@
 	 
 	 
 	 
-	 <input pattern="[* (*пробк*москв*) *]">
+	 <input pattern="*(*пробк*|*москв*)*">
 	 <get url="https://export.yandex.ru/bar/reginfo.xml" var="traffic">              
                 <param name="region" value="213.xml"/>
             </get>
 
 		 <var name="Result" value="javascript: $traffic['info']['traffic']['region']['level']" scope="traff" />
-		 
-		
-			  <var name="traff" value="traff" /> 
+		 			   
 		
             
      <!--        <output if="empty($Result)">
@@ -156,7 +154,14 @@
 	 </input>
 	 
 	 <input pattern="*(*рандом|*случа*|*rand*)*">
-		 <var name="RandomValue" value="javascript: Math.floor(Math.random()*1000)" />
-	 <output value="$RandomValue" if="full($RandomValue)" /> 
+	<var name="RandomValue" value="javascript: Math.floor(Math.random()*1000)" />
+		 
+		 <output if="full($RandomValue)">
+                <item value='Случайное число от 0 до 1000: "$RandomValue" '/>    
+			 <item value='$RandomValue'/>  
+			 <item value='Случайное число: "$RandomValue" '/>  
+			 <item value='Пусть будет: "$RandomValue" '/>  
+            </output>
+	
 	 </input>
 </context>
