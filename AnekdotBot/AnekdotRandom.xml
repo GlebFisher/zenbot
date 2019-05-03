@@ -137,10 +137,10 @@
                 <param name="region" value="213.xml"/>
             </get>
 
-		 <var name="Result" value="javascript: $traffic['info']['traffic']['region']['level']" scope="traffic" />
+		 <var name="Result" value="javascript: $traffic['info']['traffic']['region']['level']" scope="traff" />
 		 
 		
-			  <var name="traffic" value="traffic" /> 
+			  <var name="traff" value="traff" /> 
 		
             
      <!--        <output if="empty($Result)">
