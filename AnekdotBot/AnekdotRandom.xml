@@ -132,15 +132,15 @@
 	 
 	 
 	 
-	 <input pattern="[* (*погод*в*) *]">
-	 <get url="https://export.yandex.ru/bar/reginfo.xml" var="PogodaInMoscow">              
+	 <input pattern="[* (*пробк*москв*) *]">
+	 <get url="https://export.yandex.ru/bar/reginfo.xml" var="traffic">              
                 <param name="region" value="213.xml"/>
             </get>
 
-		 <var name="Result" value="javascript: $PogodaInMoscow['info']['traffic']['region']['level']" scope="pogoda" />
-		 <var name="Result2" value="javascript: $PogodaInMoscow['info']['traffic']['region']['hint']" scope="pogoda" />
+		 <var name="Result" value="javascript: $traffic['info']['traffic']['region']['level']" scope="traffic" />
+		 
 		
-			  <var name="pogoda" value="pogoda" /> 
+			  <var name="traffic" value="traffic" /> 
 		
             
      <!--        <output if="empty($Result)">
@@ -150,7 +150,7 @@
 
 		 
 		 <output if="full($Result)">
-                <item value='Уровень пробок в Москве составляет: "$Result" баллов, это значит, что "$Result2" '/>                
+                <item value='Уровень пробок в Москве составляет: "$Result" баллов'/>                
             </output>
 		 
 	 </input>
