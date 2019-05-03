@@ -137,7 +137,8 @@
                 <param name="region" value="213.xml"/>
             </get>
 
-		 <var name="Result" value="javascript: $PogodaInMoscow['info']['traffic']['region']={['213']:['hint']:['content']}" scope="pogoda" />
+		 <var name="Result" value="javascript: $PogodaInMoscow['info']['traffic']['region']['level']" scope="pogoda" />
+		 <var name="Result2" value="javascript: $PogodaInMoscow['info']['traffic']['region']['hint']" scope="pogoda" />
 		
 			  <var name="pogoda" value="pogoda" /> 
 		
@@ -147,7 +148,10 @@
                 <item value="В википедии ничего не нашлось..."/>
             </output>  --> 
 
+		 <output value="Уровень пробок в Москве составляет"/>
             <output value="$Result" if="full($Result)"/>
+		  <output value="баллов"/>
+		 <output value="$Result2" if="full($Result2)"/>
 	 </input>
 	 
 	 
