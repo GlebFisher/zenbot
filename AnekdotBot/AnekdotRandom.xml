@@ -122,7 +122,7 @@
 			 </input>	
 	 	
 <input pattern="*">
-	<output value="Hallo $UserName!" channel="telegram"/>  
+	<output value="Hello $UserName!" channel="telegram"/>  
 </input>
 	 
 	 
@@ -161,15 +161,19 @@
 	
 	 </input>
 	 
+	 
+	 
 	 <input pattern="*(*угадай|*число*|*игра*|*game*)*">
-		 
+				 
 	<var name="RandomValueForGame" value="javascript: Math.floor(Math.random()*10)" />
 		 <output value="Мною загадано число от 0 до 10, попробуй его отгадать." if="full($RandomValueForGame)" />
 		 
-		 <input pattern="$otvetUser">
-			 <output if="full($otvetUser) and $RandomValueForGame == $otvetUser" value="Да, всё верно! Вы угадали!"/>
-		 </input>
+		 
 	
+	 </input>
+	 
+	 <input pattern="$otvetUser">
+			 <output if="full($otvetUser) and $RandomValueForGame == $otvetUser" value="Да, всё верно! Вы угадали!"/>
 	 </input>
 	 
 	 
