@@ -156,7 +156,7 @@
 	 </input>
 	 
 	 <input pattern="*(*рандом|*случа*|*rand*)*">
-		 <var name="RandomValue" value="javascript: Math.random().text" />
+		 <var name="RandomValue" value="javascript: Math.random()" />
 	 <output value="$RandomValue" if="full($RandomValue)" /> 
 	 </input>
 </context>
